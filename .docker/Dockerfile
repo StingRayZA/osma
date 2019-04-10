@@ -10,7 +10,7 @@ RUN apt-get update && \
 RUN docker-php-ext-install mbstring && \
     docker-php-ext-install mysqli
 
-COPY * /var/www/html/
+COPY ./ /var/www/html/
 
 ENV OSMA_DB_CONFIG /var/www/html/dbconnect.php
 
