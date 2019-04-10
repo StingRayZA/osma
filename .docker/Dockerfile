@@ -12,6 +12,12 @@ RUN docker-php-ext-install mbstring && \
 
 COPY * /var/www/html/
 
+ENV OSMA_DB_CONFIG /var/www/html/database.php
+
+RUN sed -i -e "s/'172.30.132.205'/getenv('OSMA_DB_HOST')/g" ${OSMA_DB_CONFIG} && \
+    sed -i -e "s/'adminzvJZccK'/getenv('OSMA_DB_USER')/g" ${OSMA_DB_CONFIG} && \
+    sed -i -e "s/'5Et6HuymAm_j'/getenv('OSMA_DB_PASS')/g" ${OSMA_DB_CONFIG} && \
+    sed -i -e "s/'spider'/getenv('OSMA_DB_NAME')/g"  ${OSMA_DB_CONFIG}
 
 
 
