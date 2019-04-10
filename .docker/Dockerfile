@@ -19,5 +19,7 @@ RUN sed -i -e "s/'localhost'/getenv('OSMA_DB_HOST')/g" ${OSMA_DB_CONFIG} && \
     sed -i -e "s/'password'/getenv('OSMA_DB_PASS')/g" ${OSMA_DB_CONFIG} && \
     sed -i -e "s/'osma'/getenv('OSMA_DB_NAME')/g"  ${OSMA_DB_CONFIG}
 
+RUN sed -i -e "s/GOOGLE_CAPTCHA_SITE_KEY/getenv('OSMA_CAPTCHA_SITE_KEY')/g" /var/www/html/register.php && \
+    sed -i -e "s/GOOGLE_CAPTCHA_SECRET_KEY/getenv('OSMA_CAPTCHA_SECRET_KEY')/g" /var/www/html/register.php
 
 
