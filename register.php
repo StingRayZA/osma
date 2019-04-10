@@ -158,7 +158,7 @@ if(strpos($resp, '"success": true') !== FALSE) {
         <?php #echo Securimage::getCaptchaHtml() ?>
         						<span class="text-danger"><?php if (isset($captcha_error)) echo "<br>$captcha_error"; ?></span>
     </div>
-<div class="g-recaptcha" data-sitekey="GOOGLE_CAPTCHA_SECRET_KEY"></div>
+<div class="g-recaptcha" data-sitekey="GOOGLE_CAPTCHA_SITE_KEY"></div>
 					<div class="form-group">
 						<input type="submit" name="signup" value="Sign Up" class="btn btn-primary" />
 					</div>
