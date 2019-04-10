@@ -7,7 +7,7 @@ RUN apt-get update && \
 
 #Note, with the following, you need to do configure->install->configure->install
 # You can't just configure->configure->install->install - the world will end horribly
-RUN ocker-php-ext-install mbstring && \
+RUN docker-php-ext-install mbstring && \
     docker-php-ext-install mysqli
 
 COPY * /var/www/html/
